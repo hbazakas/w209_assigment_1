@@ -35,6 +35,7 @@ function update(myData) {
     .style("fill", "black")
     .style("font-size", "12pt")
     .text("Distance")
+    .attr("font-style", "italic")
     .attr("transform", `translate(${iwidth}, ${20})`);
 
   var marks = gDrawing.selectAll(".mark").data(myData);
