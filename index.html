@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Strava Data Visualization</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div class="chart">
+      <h1>Strava Exercise Analysis</h1>
+      <div class="description">
+        Bar chart detailing the date, length, type, and altitude gain of all the exercises I've logged in Strava this year.
+      </div>
+      <div id="chart"></div>
+      <div class="chart-footer">
+        By <a href="https://www.ischool.berkeley.edu/people/henry-bazakas">Henry Bazakas</a>.
+        <br />
+        <strong>Source</strong>: <a href="https://www.strava.com/athletes/56598216">Data from Strava.com</a>
+      </div>
+    </div>
+    <br />
+    <br />
+
+    <div class="description">
+
+      <br />
+      In April I began using <a href="https://www.strava.com/dashboard">Strava </a> to track my exercise. The above chart details the different exercises I have logged.
+      I have logged a variety of different kinds of exercises, and have gone different distances every time I ride/run/hike/walk.
+      This is reflected in the colors of the bars and their lengths. This chart helps visualize what I have been up
+      to since I began recording my exercises. Some of the key observations are that I ride my bike more frequently than
+      I do any other type of exercise and I rarely go on runs (only one included in this dataset).
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    <h2>Problem Abstraction</h2>
+
+    <br />
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">Problem Abstraction</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>What</td>
+          <td>
+            I have nominal categorical data about what type of exercise I logged, as well as ratio numerical data
+            about how long each ride was and how much elevation gain it included. These datapoints are tied to interval date
+            data, which tells when each exercise was completed. These different datapoints about each instance of exercise
+            help understand what patterns I've been falling into.
+          </td>
+        </tr>
+        <tr>
+          <td>Why</td>
+          <td>
+            I want to display the exercises I have done so far this year in a way that is easy to understand.
+            I hope that viewers will quickly be able to tell what type of exercise I have been doing and how far I've gone.
+          </td>
+        </tr>
+        <tr>
+          <td>How</td>
+          <td>
+            For right now I am representing this with a bar chart showing distance. It also includes text, which describes the exercise.
+            I think it could be possible to represent this mor succinctly. I also think I could visualize the time aspect better.
+            My ideas to make this more engaging are to make it an interactive visual that changes when the viewer hovers.
+            I would also like to think of a way to represent elevation visually rather than just numerically.
+          </td>
+        </tr>
+        <tr>
+          <td>Insight 1</td>
+          <td>I have predominantly chosen bike rides when I have worked out this year.</td>
+        </tr>
+        <tr>
+          <td>Insight 2</td>
+          <td>Non-biking exercises tend to come in groups - there are two noticable clusters of hiking and walking.
+            While one would not know this from looking at the graph, these are a result of my bike needing repairs.
+         </td>
+       </tr>
+       <tr>
+         <td>Insight 3</td>
+         <td>My bike rides have not gotten significantly longer or shorter as the year has gone on. One might expect that
+            I would ride longer distances as I get better at it, but this hasn't been the case. In fact, my longest rides were
+            in the middle of the dataset.
+        </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Credits to:</h3>
+    <div>
+      I relied on the template from John Guerra for the creation of this visualization. It can be found <a href = "https://github.com/john-guerra/w209_assignment_1_template/blob/master/js/main.js"> here. </a>
+    </div>
+
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="./js/main.js"></script>
+
+  </body>
+</html>
