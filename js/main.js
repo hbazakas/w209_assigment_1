@@ -1,4 +1,4 @@
-var width = 800;
+var width = 1000;
 var height = 1000;
 var svg = d3
     .select("#chart")
@@ -6,7 +6,7 @@ var svg = d3
     .attr("width", width)
     .attr("height", height)
 
-var margin = { top: 30, right: 100, bottom: 30, left: 30 };
+var margin = { top: 30, right: 200, bottom: 30, left: 100 };
 var iwidth = width - margin.left - margin.right;
 var iheight = height - margin.top - margin.bottom;
 
@@ -62,13 +62,15 @@ function update(myData) {
        .attr("x", function(d){return x(d.distance);})
        .attr("y", function(d,i) {return y(i)-10+barheight/2;})
        .attr("dx", ".35em")
+       .attr("font-style", "normal")
        .text(function(d) {
-             return d.type + " - " + d.elevation + "feet";});
+             return d.type + "-" + d.elevation + " feet elevation";});
 
   marks.enter().append("text").attr("class", "mark")
-       .attr("x", 0})
+       .attr("x", -80)
        .attr("y", function(d,i) {return y(i)-10+barheight/2;})
        .attr("dx", ".35em")
+       .attr("font-style", "normal")
        .text(function(d) {
               return d.date;});
          // TODO change for the mark you want to use e.g. rect, path, etc
